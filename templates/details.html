@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% block body %}
+    {% if data %}
+        <div class="jumbotron">
+                <h1>YOUR DETAILS</h1>
+                <ul>
+                    <li>Name        = {{data['username']}}</li>
+                    <li>Password    = {{data['password']}}</li>
+                    <li>Email       = {{data['email']}}</li>
+                    <li>Degree      = {{data['degree']}}</li>
+                    <li>Register    = {{data['register']}}</li>
+                    <li>Age         = {{data['age']}}</li>
+                    <li>City        = {{data['city']}}</li>
+                </ul>
+        </div>
+    {% else %}
+        <p>Coudn't fetch data</p>
+    {% endif %}
+    <div class="login">
+            <a href="/logout" style="text-align: center;text-decoration: none;color:blue"><h3>Logout</h3></a>
+    </div>
+{% endblock %}
